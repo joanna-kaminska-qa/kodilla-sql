@@ -1,0 +1,48 @@
+CREATE TABLE ISSUESLISTS (
+ID SERIAL PRIMARY KEY,
+NAME VARCHAR(250) CHARSET utf8mb4
+);
+
+CREATE TABLE ISSUES (
+ID SERIAL PRIMARY KEY,
+ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+SUMMARY VARCHAR(250) CHARSET utf8mb4,
+DESCRIPTION VARCHAR(2000) CHARSET utf8mb4,
+USER_ID_ASSIGNEDTO BIGINT UNSIGNED,
+FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+COMMIT;
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES 
+  ('ToDo'),
+  ('In progress'),
+  ('Done');
+  
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION)
+VALUES
+(1, 'Naprawić błąd logowania', 'Użytkownicy nie mogą się zalogować, trzeba zbadać problem.'),
+(1, 'Dodanie strony kontakt', 'Stworzyć nową stronę kontaktową z formularzem.'),
+(1, 'Aktualizacja polityki prywatności', 'Zaktualizować tekst polityki zgodnie z nowymi przepisami.'),
+(1, 'Przygotowanie raportu miesięcznego', 'Zebrać dane i przygotować raport za ostatni miesiąc.'),
+(1, 'Optymalizacja bazy danych', 'Poprawić wydajność zapytań w bazie.');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION)
+VALUES
+(2, 'Projektowanie nowej strony', 'Tworzymy layout nowej strony głównej.'),
+(2, 'Testowanie formularza rejestracji', 'Sprawdzanie poprawności działania formularza.'),
+(2, 'Integracja z API płatności', 'Dodanie obsługi płatności online.'),
+(2, 'Poprawa bezpieczeństwa', 'Wdrożenie dodatkowych zabezpieczeń.'),
+(2, 'Aktualizacja dokumentacji', 'Uzupełnienie dokumentacji technicznej.');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION)
+VALUES
+(3, 'Migracja serwera', 'Przeniesienie danych na nowy serwer.'),
+(3, 'Szkolenie zespołu', 'Przeprowadzenie szkolenia z nowych narzędzi.'),
+(3, 'Poprawa UI', 'Usprawnienie wyglądu aplikacji.'),
+(3, 'Automatyzacja backupów', 'Skrypt do automatycznych kopii zapasowych.'),
+(3, 'Wdrożenie SSL', 'Zabezpieczenie strony certyfikatem SSL.');
+  
+COMMIT;
