@@ -2,8 +2,8 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL-blue)
 ![MySQL](https://img.shields.io/badge/Database-MySQL%208-orange)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Status: Completed](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 This project contains solutions to SQL tasks completed as part of a module in the **Kodilla "Automated Tester"** course focusing on **SQL**.
 The exercises were performed using **MySQL**, focusing on understanding core database concepts, table operations, and CRUD queries.
