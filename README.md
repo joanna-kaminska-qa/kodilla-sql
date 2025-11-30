@@ -1,4 +1,4 @@
-# kodilla-sql
+# sql-testing
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL-blue)
 ![MySQL](https://img.shields.io/badge/Database-MySQL%208-orange)
